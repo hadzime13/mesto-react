@@ -9,13 +9,13 @@ class Api {
       return res.json();
     }
     return Promise.reject(res.statusText);
-  }
+  };
 
   // Метод обработки ошибки запроса
   handleResponseError(err) {
     console.log(`Error,${err}`);
     return Promise.reject(err['message']);
-  }
+  };
 
   // Получение инфо о пользователе
   getUser() {
@@ -39,7 +39,7 @@ class Api {
     },
     )
       .then(this._handleResponse)
-  }
+  };
 
   // Обновление аватара
   updateUserAvatar(newAvatar) {
@@ -52,7 +52,7 @@ class Api {
     },
     )
       .then(this._handleResponse)
-  }
+  };
 
   // Загрузка массива карточек с сервера
   getInitialCards() {
@@ -62,10 +62,10 @@ class Api {
     },
     )
       .then(this._handleResponse)
-  }
+  };
 
   // Добавление карточки
-  uploadCard(name, link) {
+  uploadCard({ name, link }) {
     return fetch(`${this._url}/cards`, {
       method: 'POST',
       headers: this._headers,
@@ -76,7 +76,7 @@ class Api {
     },
     )
       .then(this._handleResponse)
-  }
+  };
   // Удаление карточки 
   deleteCard(id) {
     return fetch(`${this._url}/cards/${id}`, {
@@ -85,26 +85,25 @@ class Api {
     },
     )
       .then(this._handleResponse)
-  }
+  };
   // Методы лайков
 
-  like(cardId) {
-    return fetch(`${this._url}/cards/likes/${cardId}`, {
-      method: 'PUT',
-      headers: this._headers
-    },
-    )
-      .then(this._handleResponse)
-  }
-
-  disLike(cardId) {
-    return fetch(`${this._url}/cards/likes/${cardId}`, {
-      method: 'DELETE',
-      headers: this._headers
-    },
-    )
-      .then(this._handleResponse)
-  }
+  changeLikeStatus(cardId, isLiked) {
+    if (isLiked) {
+      return fetch(`${this._url}/cards/likes/${cardId}`, {
+        method: 'DELETE',
+        headers: this._headers
+      })
+        .then(this._handleResponse)
+    }
+    else {
+      return fetch(`${this._url}/cards/likes/${cardId}`, {
+        method: 'PUT',
+        headers: this._headers
+      })
+        .then(this._handleResponse)
+    }
+  };
 }
 
 const api = new Api({
