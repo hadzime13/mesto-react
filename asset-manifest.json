@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/hadzime13/mesto-react/static/css/main.d05b7385.chunk.css",
+    "main.js": "/hadzime13/mesto-react/static/js/main.73e47cc6.chunk.js",
+    "main.js.map": "/hadzime13/mesto-react/static/js/main.73e47cc6.chunk.js.map",
+    "runtime-main.js": "/hadzime13/mesto-react/static/js/runtime-main.197593e2.js",
+    "runtime-main.js.map": "/hadzime13/mesto-react/static/js/runtime-main.197593e2.js.map",
+    "static/js/2.29b1cd62.chunk.js": "/hadzime13/mesto-react/static/js/2.29b1cd62.chunk.js",
+    "static/js/2.29b1cd62.chunk.js.map": "/hadzime13/mesto-react/static/js/2.29b1cd62.chunk.js.map",
+    "index.html": "/hadzime13/mesto-react/index.html",
+    "precache-manifest.d580ef31117edf3c6ff302303d347c8c.js": "/hadzime13/mesto-react/precache-manifest.d580ef31117edf3c6ff302303d347c8c.js",
+    "service-worker.js": "/hadzime13/mesto-react/service-worker.js",
+    "static/css/main.d05b7385.chunk.css.map": "/hadzime13/mesto-react/static/css/main.d05b7385.chunk.css.map",
+    "static/js/2.29b1cd62.chunk.js.LICENSE.txt": "/hadzime13/mesto-react/static/js/2.29b1cd62.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/hadzime13/mesto-react/static/media/сlose_icon.c2d0901f.svg",
+    "static/media/logo.svg": "/hadzime13/mesto-react/static/media/logo.855a8c98.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.197593e2.js",
+    "static/js/2.29b1cd62.chunk.js",
+    "static/css/main.d05b7385.chunk.css",
+    "static/js/main.73e47cc6.chunk.js"
+  ]
+}
