@@ -7,8 +7,11 @@ const EditAvatarPopup = React.memo(({ isOpen, onClose, onUpdateAvatar }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onUpdateAvatar(avatarRef.current.value);
-    avatarRef.current.value = '';
   }
+  // Сброс полей ввода
+  React.useEffect(() => {
+    avatarRef.current.value = '';
+  }, [isOpen])
 
   return (
     <PopupWithForm
