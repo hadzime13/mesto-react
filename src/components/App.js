@@ -6,7 +6,7 @@ import ImagePopup from './ImagePopup';
 import EditProfilePopup from './EditProfilePopup'
 import EditAvatarPopup from './EditAvatarPopup'
 import AddPlacePopup from './AddPlacePopup';
-import api from './utils/Api';
+import api from '../utils/Api';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 
@@ -123,9 +123,11 @@ function App() {
 
   // Загрузка карточек страницы 
   React.useEffect(() => {
-    api.getInitialCards()
-      .then((res) => {
-        setCards(res);
+    const promises = [api.getUser(), api.getInitialCards()]
+    Promise.all(promises)
+      .then(([user, cards]) => {
+        setCurrentUser(user);
+        setCards(cards);
       })
       .catch((res) => {
         api.handleResponseError(res);
