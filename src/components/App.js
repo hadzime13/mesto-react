@@ -112,16 +112,8 @@ function App() {
       })
   }
 
-  // Получение инфо о юзере при загрузке страницы
-  React.useEffect(() => {
-    api.getUser()
-      .then((res) => {
-        setCurrentUser(res)
-      }
-      )
-  }, []);
 
-  // Загрузка карточек страницы 
+  // Загрузка данных о пользователе и карточек страницы
   React.useEffect(() => {
     const promises = [api.getUser(), api.getInitialCards()]
     Promise.all(promises)
@@ -133,6 +125,7 @@ function App() {
         api.handleResponseError(res);
       })
   }, []);
+  
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <>
